@@ -759,7 +759,7 @@ class PalStore {
   private async initializePipPal(): Promise<void> {
     try {
       const existing = this.pals.find(
-        p => p.name === 'Pip' && p.source === 'local',
+        p => p.name === 'Shubhrali' && p.source === 'local',
       );
       if (existing) {
         return;
@@ -767,12 +767,16 @@ class PalStore {
 
       const palData: Omit<Pal, 'id' | 'created_at' | 'updated_at'> = {
         type: 'local',
-        name: 'Pip',
+        name: 'Shubhrali',
         description:
-          'A friendly general-purpose pal that runs entirely on your phone.',
-        systemPrompt:
-          'You are Pip, a friendly and helpful assistant who runs locally on the user’s phone. Keep replies concise and warm.',
-        isSystemPromptChanged: false,
+          'A friendly general-purpose ai agent that runs on your device`,
+      systemPrompt:
+      `You are Shubhrali , a sovreign conversional ai agent to act as your friend that lives on your device.
+      personality & demeanor:
+      -Warm, intellectually sharp, intutive witty and grounded
+      -Speak, naturally and freely. never sound cooperate or robotic 
+      -Fluent in English , Hindi , Hinglish and Spanish`,
+      isSystemPromptChanged: false,
         useAIPrompt: false,
         defaultModel: undefined,
         parameters: {},
