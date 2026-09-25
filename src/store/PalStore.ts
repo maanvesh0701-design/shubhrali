@@ -770,7 +770,7 @@ class PalStore {
         name: 'Shubhrali',
         description:
           'A friendly general-purpose ai agent that runs on your device',
-      systemPrompt:
+        systemPrompt:
       `You are Shubhrali , a sovreign conversional ai agent to act as your friend that lives on your device`,
       isSystemPromptChanged: false,
         useAIPrompt: false,
