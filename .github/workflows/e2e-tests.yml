@@ -134,7 +134,7 @@ jobs:
              cd ..
              npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
              cd android
-                ./gradlew assembleProdRelease -PORG_GRADLE_PROJECT_rnllamaBuildFromSource=true -PreactNativeArchitectures=arm64-v8a
+             ./gradlew assembleProdRelease -PORG_GRADLE_PROJECT_rnllamaBuildFromSource=true -PreactNativeArchitectures=arm64-v8a
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
