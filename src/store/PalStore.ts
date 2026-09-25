@@ -768,10 +768,11 @@ class PalStore {
       const palData: Omit<Pal, 'id' | 'created_at' | 'updated_at'> = {
         type: 'local',
         name: 'Shubhrali',
-        description:
-          'A friendly general-purpose ai agent that runs on your device',
-        systemPrompt:
-      `You are Shubhrali , a sovreign conversional ai agent to act as your friend that lives on your device`,
+              description:
+        'A friendly general-purpose ai agent that runs on your device',
+      // eslint-disable-next-line prettier/prettier
+      systemPrompt:
+        `You are Shubhrali, a sovreign conversional ai agent to act as your friend that lives on your device`,
       isSystemPromptChanged: false,
         useAIPrompt: false,
         defaultModel: undefined,
