@@ -133,22 +133,11 @@ jobs:
             echo "::error::ORG_GRADLE_PROJECT_rnllamaBuildFromSource is '${ORG_GRADLE_PROJECT_rnllamaBuildFromSource:-<unset>}', expected 'true'."
             exit 1
           fi
-          ./gradlew assembleRelease
-          
-      # COUPLING: the string grepped for below is upstream's, printed by
-      # node_modules/llama.rn/android/build.gradle next to its rnllamaVariants
-      # lookup. A llama.rn upgrade that rewords it fails this step. The fix is
-      # to update the literal, not to delete the check
-      # This build may ADD test scaffolding — different flavor, automation
-      # bridge, debuggable, dummy signing — but it must not SUBTRACT production
-      # capability, which is what this asserts. The manifest describes only the
-      # native payload, and that does not vary by flavor, so it applies here
-      # unchanged. The mirror of this is ci.yml's DCE check, which asserts the
-      # prod artifact carries none of the test code this one is allowed to add.
+                    ./gradlew assembleProdRelease -PreactNativeArchitectures=arm64-v8a
       
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-apk
-          path: android/app/build/outputs/apk/release/*.apk
-          retention-days: 30
+           name: app-release-apk
+           path: android/app/build/outputs/apk/**/release/*.apk
+           retention-days: 30
